@@ -1,7 +1,7 @@
 var arrayCharacters = [];
 var arrayLetters = [];
 var arrayBox = [];
-
+var arrayEncrypted = [];
 
 
 
@@ -38,6 +38,13 @@ var encrypter = function(text){
     };
   };
   console.log(arrayBox);
+
+  for(var x = 0; x < arrayBox.length; x += 1){
+    for(var y = 0; y < arrayBox[x].length; y += 1){
+      arrayEncrypted.push(arrayBox[x][y]);
+    };
+  };
+  console.log(arrayEncrypted);
 };
 
 $(document).ready(function(){
