@@ -45,6 +45,11 @@ var encrypter = function(text){
     };
   };
   console.log(arrayEncrypted);
+
+  for(var index = 5; index < arrayEncrypted.length; index += 6){
+    arrayEncrypted.splice(index, 0, " ");
+  };
+  console.log(arrayEncrypted);
 };
 
 $(document).ready(function(){
