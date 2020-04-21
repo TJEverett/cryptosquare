@@ -22,7 +22,12 @@ var encrypter = function(text){
 
   var root = Math.ceil(Math.sqrt(arrayLetters.length));
   console.log(root);
-}
+
+  for (var index = 1; index <= root; index += 1){
+    arrayBox.push([]);
+  };
+  console.log(arrayBox);
+};
 
 $(document).ready(function(){
   $("form#toEncrypt").submit(function(event){
