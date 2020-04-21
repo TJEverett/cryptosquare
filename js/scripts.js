@@ -27,6 +27,17 @@ var encrypter = function(text){
     arrayBox.push([]);
   };
   console.log(arrayBox);
+
+  var counter = 0;
+  for(var y = 0; y < root; y += 1){
+    for(var x = 0; x < arrayBox.length; x += 1){
+      if(counter < arrayLetters.length){
+        arrayBox[x][y] = arrayLetters[counter];
+        counter += 1;
+      };
+    };
+  };
+  console.log(arrayBox);
 };
 
 $(document).ready(function(){
