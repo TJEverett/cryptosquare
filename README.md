@@ -28,10 +28,6 @@ This program will take an input from the user and remove all non-english charact
 4. Go to desktop and right-click the downloaded file and tell it to extract all.
 5. Open the newly extracted file and launch the index.html file with your prefered browser.
 
-## Known Bugs
-
-Not yet finished
-
 ## Technologies Used
 
 * HTML
