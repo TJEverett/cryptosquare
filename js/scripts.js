@@ -1,32 +1,22 @@
-var arrayCharacters = [];
-var arrayLetters = [];
-var arrayBox = [];
-var arrayEncrypted = [];
-
-
-
-
-
-
 var encrypter = function(text){
+  var arrayCharacters = [];
+  var arrayLetters = [];
+  var arrayBox = [];
+  var arrayEncrypted = [];
+  
   text = text.toLowerCase();
   arrayCharacters = text.split('');
-  console.log(arrayCharacters);
 
   arrayCharacters.forEach(function(character) {
     if (character >= "a" && character <= "z") {
       arrayLetters.push(character);
     };
   });
-  console.log(arrayLetters);
 
   var root = Math.ceil(Math.sqrt(arrayLetters.length));
-  console.log(root);
-
   for (var index = 1; index <= root; index += 1){
     arrayBox.push([]);
   };
-  console.log(arrayBox);
 
   var counter = 0;
   for(var y = 0; y < root; y += 1){
@@ -37,24 +27,26 @@ var encrypter = function(text){
       };
     };
   };
-  console.log(arrayBox);
 
   for(var x = 0; x < arrayBox.length; x += 1){
     for(var y = 0; y < arrayBox[x].length; y += 1){
       arrayEncrypted.push(arrayBox[x][y]);
     };
   };
-  console.log(arrayEncrypted);
 
   for(var index = 5; index < arrayEncrypted.length; index += 6){
     arrayEncrypted.splice(index, 0, " ");
   };
-  console.log(arrayEncrypted);
+
+  return arrayEncrypted.join("");
 };
 
 $(document).ready(function(){
   $("form#toEncrypt").submit(function(event){
     event.preventDefault();
     var plainText = $("#plainText").val();
+    var encryptedText = encrypter(plainText);
+    $("#encrypted").text(encryptedText);
+    $("#response").show();
   });
 });
